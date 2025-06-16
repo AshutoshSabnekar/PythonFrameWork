@@ -1,0 +1,47 @@
+06/04/2025 07:36:30 PM - ConnectorsPage - INFO: Verified the presence of Connect button
+PM - HomePage - INFO: Actual Page Title From Application Web UI --> :: https://victorious-wave-01f48010f.5.azurestaticapps.net/connectors
+06/04/2025 07:36:30 PM - HomePage - INFO: Expected Page Title From Application Web UI --> :: Connectors
+06/04/2025 07:36:30 PM - HomePage - INFO: Page Title Verified Successfully as Connectors page
+06/04/2025 07:36:36 PM - HomePage - INFO: Actual Page Title From Application Web UI --> :: https://victorious-wave-01f48010f.5.azurestaticapps.net/home
+06/04/2025 07:36:36 PM - HomePage - INFO: Expected Page Title From Application Web UI --> :: Home
+06/04/2025 07:36:36 PM - HomePage - INFO: Page Title Verified Successfully as Home page
+06/04/2025 07:36:37 PM - HomePage - INFO: Verified Menu bar is collapsed by default
+06/04/2025 07:36:37 PM - HomePage - INFO: Actual Text 'Welcome to LIYA - Insight CrafterYour AI powered Reporting ToolExplore your data, find actionable insights, and report on business outcomes 10x faster than traditional methods.' matches the expected text value
+06/04/2025 07:36:37 PM - HomePage - INFO: The number of expected cards is 2, but 3 cards are shown
+06/04/2025 07:36:37 PM - HomePage - INFO: Verified Menu bar is collapsed by default
+06/04/2025 07:36:37 PM - HomePage - INFO: Verified Menu bar is expanded
+06/04/2025 07:36:37 PM - HomePage - INFO: Verified Menu bar is Collapsed
+06/04/2025 07:36:37 PM - HomePage - INFO: The Menu Option at position : 1 is Home
+06/04/2025 07:36:37 PM - HomePage - INFO: The Menu Option at position : 2 is Connect
+06/04/2025 07:36:37 PM - HomePage - INFO: The Menu Option at position : 3 is Insights
+06/04/2025 07:36:37 PM - HomePage - INFO: The Menu Option at position : 4 is Actionable Insights
+06/04/2025 07:36:37 PM - HomePage - INFO: The Menu Option at position : 5 is Consolidated Insights
+06/04/2025 07:36:37 PM - HomePage - INFO: The Menu Option at position : 6 is Dashboard
+06/04/2025 07:36:37 PM - HomePage - INFO: The Menu Option at position : 7 is User Management
+06/04/2025 07:36:37 PM - HomePage - INFO: The Menu Option at position : 8 is Data Hub
+06/04/2025 07:36:39 PM - HomePage - INFO: Element not found with locator: //mat-drawer[@ng-reflect-ng-class='sidenav-collapsed'] locatorType: xpath
+06/04/2025 07:36:39 PM - HomePage - INFO: Menu bar is not collapsed by default
+06/04/2025 07:36:41 PM - HomePage - INFO: Element not found with locator: //mat-drawer[@ng-reflect-ng-class='sidenav-collapsed']//mat-icon locatorType: xpath
+06/04/2025 07:36:41 PM - HomePage - INFO: Cannot click on the element with locator: //mat-drawer[@ng-reflect-ng-class='sidenav-collapsed']//mat-icon locatorType: XPATH
+06/04/2025 07:36:41 PM - HomePage - INFO: Verified Menu bar is expanded
+06/04/2025 07:36:42 PM - HomePage - INFO: Verified Menu bar is Collapsed
+06/04/2025 07:36:42 PM - HomePage - INFO: Page name is : connectors
+06/04/2025 07:36:42 PM - HomePage - INFO: Actual Page Title From Application Web UI --> :: https://victorious-wave-01f48010f.5.azurestaticapps.net/connectors
+06/04/2025 07:36:42 PM - HomePage - INFO: Expected Page Title From Application Web UI --> :: Connectors
+06/04/2025 07:36:42 PM - HomePage - INFO: Page Title Verified Successfully as Connectors page
+06/04/2025 07:36:42 PM - HomePage - INFO: Page name is : consolidated insights
+06/04/2025 07:36:42 PM - HomePage - INFO: Actual Page Title From Application Web UI --> :: https://victorious-wave-01f48010f.5.azurestaticapps.net/insight
+06/04/2025 07:36:42 PM - HomePage - INFO: Expected Page Title From Application Web UI --> :: insight
+06/04/2025 07:36:42 PM - HomePage - INFO: Page Title Verified Successfully as insight page
+06/04/2025 07:36:42 PM - HomePage - INFO: Page name is : dashboard
+06/04/2025 07:36:42 PM - HomePage - INFO: Actual Page Title From Application Web UI --> :: https://victorious-wave-01f48010f.5.azurestaticapps.net/dashboard
+06/04/2025 07:36:42 PM - HomePage - INFO: Expected Page Title From Application Web UI --> :: Dashboard
+06/04/2025 07:36:42 PM - HomePage - INFO: Page Title Verified Successfully as Dashboard page
+06/04/2025 07:36:42 PM - HomePage - INFO: Page name is : insights
+06/04/2025 07:36:43 PM - HomePage - INFO: Actual Page Title From Application Web UI --> :: https://victorious-wave-01f48010f.5.azurestaticapps.net/analyze
+06/04/2025 07:36:43 PM - HomePage - INFO: Expected Page Title From Application Web UI --> :: analyze
+06/04/2025 07:36:43 PM - HomePage - INFO: Page Title Verified Successfully as analyze page
+06/04/2025 07:36:43 PM - HomePage - INFO: Page name is : user management
+06/04/2025 07:36:43 PM - HomePage - INFO: Actual Page Title From Application Web UI --> :: https://victorious-wave-01f48010f.5.azurestaticapps.net/dashboard
+06/04/2025 07:36:43 PM - HomePage - INFO: Expected Page Title From Application Web UI --> :: User Management
+06/04/2025 07:36:43 PM - HomePage - WARNING: Expected Title: user management and Actual Page Title :liya - insight crafter do not match
