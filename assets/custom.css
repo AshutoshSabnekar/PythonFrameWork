@@ -1,0 +1,40 @@
+/* Enhanced styling for test results */
+.results-table-row.passed .col-result:after {
+    content: " ✅ Test passed successfully";
+    color: #27ae60;
+    font-weight: normal;
+    margin-left: 10px;
+}
+
+.results-table-row.failed .col-result:after {
+    content: " ❌ Test failed - check logs";
+    color: #e74c3c;
+    font-weight: normal;
+    margin-left: 10px;
+}
+
+.results-table-row.error .col-result:after {
+    content: " ⚠️ Test error occurred";
+    color: #f39c12;
+    font-weight: normal;
+    margin-left: 10px;
+}
+
+/* Custom message styling */
+.custom-passed-message {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px 0;
+    border-left: 4px solid #28a745;
+}
+
+.custom-failed-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px 0;
+    border-left: 4px solid #dc3545;
+}

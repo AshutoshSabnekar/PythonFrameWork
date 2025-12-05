@@ -1,0 +1,431 @@
+10/29/2025 03:47:43 PM - InsightsPage - INFO: Starting prompt verification for test case: test_verifyInsurancePrompt1
+10/29/2025 03:47:43 PM - InsightsPage - INFO: Expected connection name: cement10/29/2025 03:51:34 PM - DriverFactory - INFO: Driver closed successfully
+ds
+10/29/2025 03:47:48 PM - InsightsPage - INFO: Clicking on prompt label: XPath='//span[text()='Prompt']'
+10/29/2025 03:47:48 PM - InsightsPage - INFO: Waiting for dropdown arrow to become visible: XPath='//div[@class='mat-mdc-select-arrow']'
+10/29/2025 03:47:48 PM - InsightsPage - INFO: Clicking on dropdown arrow
+10/29/2025 03:47:48 PM - InsightsPage - INFO: Fetching dropdown options
+10/29/2025 03:47:48 PM - InsightsPage - INFO: Static wait for 3 seconds
+10/29/2025 03:47:51 PM - InsightsPage - DEBUG: Found option: 'cementdemo'
+10/29/2025 03:47:51 PM - InsightsPage - INFO: Selecting matching option: 'cementdemo'
+10/29/2025 03:47:51 PM - InsightsPage - INFO: Entering prompt input for test case: test_verifyInsurancePrompt1
+10/29/2025 03:47:51 PM - InsightsPage - INFO: Entered prompt input: What are the sales record for past year
+10/29/2025 03:47:51 PM - InsightsPage - INFO: Clicking to submit the prompt
+10/29/2025 03:47:51 PM - InsightsPage -10/29/2025 03:49:38 PM - HomePage - INFO: Page name is : home
+10/29/2025 03:49:38 PM - HomePage - INFO: Actual Page Title From Application Web UI --> :: https://victorious-wave-01f48010f.5.azurestaticapps.net/home
+10/29/2025 03:49:38 PM - HomePage - INFO: Expected Page Title From Application Web UI --> :: Home
+10/29/2025 03:49:38 PM - HomePage - INFO: Page Title Verified Successfully as Home page
+10/29/2025 03:49:39 PM - HomePage - INFO: Page name is : insights
+10/29/2025 03:49:39 PM - HomePage - INFO: Actual Page Title From Application Web UI --> :: https://victorious-wave-01f48010f.5.azurestaticapps.net/analyze
+10/29/2025 03:49:39 PM - HomePage - INFO: Expected Page Title From Application Web UI --> :: analyze
+10/29/2025 03:49:39 PM - HomePage - INFO: Page Title Verified Successfully as analyze page
+c-icon-button mat-mdc-button-base mat-mdc-tooltip-trigger mat-primary mat-mdc-button-disabled" mat-ripple-loader-class-name="mat-mdc-button-ripple" mat-ripple-loader-centered="" aria-describedby="cdk-describedby-message-ng-1-52" cdk-describedby-host="ng-1" disabled="true">...</button> is not clickable at point (1480, 721). Other element would receive the click: <div _ngcontent-ng-c1308102967="" class="submit-prompt">...</div>
+  (Session info: chrome=141.0.7390.123)
+Stacktrace:
+	GetHandleVerifier [0x0xbafe43+66515]
+	GetHandleVerifier [0x0xbafe84+66580]
+	(No symbol) [0x0x99dc48]
+	(No symbol) [0x0x9eec10]
+	(No symbol) [0x0x9ecf73]
+	(No symbol) [0x0x9eaa17]
+	(No symbol) [0x0x9e9c8d]
+	(No symbol) [0x0x9de115]
+	(No symbol) [0x0xa0b1cc]
+	(No symbol) [0x0x9ddb74]
+	(No symbol) [0x0xa0b384]
+	(No symbol) [0x0xa2cba7]
+	(No symbol) [0x0xa0afc6]
+	(No symbol) [0x0x9dc2ca]
+	(No symbol) [0x0x9dd154]
+	GetHandleVerifier [0x0xe07353+2521315]
+	GetHandleVerifier [0x0xe022d3+2500707]
+	GetHandleVerifier [0x0xbd7c94+229924]
+	GetHandleVerifier [0x0xbc81f8+165768]
+	GetHandleVerifier [0x0xbcecad+193085]
+	GetHandleVerifier [0x0xbb8158+100072]
+	GetHandleVerifier [0x0xbb82f0+100480]
+	GetHandleVerifier [0x0xba25aa+11066]
+	BaseThreadInitThunk [0x0x76695d49+25]
+	RtlInitializeExceptionChain [0x0x775fd6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x775fd661+561]
+
+10/29/2025 03:47:53 PM - InsightsPage - INFO: Prompt submitted successfully
+10/29/2025 03:47:53 PM - InsightsPage - INFO: Static wait for 20 seconds: Awaiting insights to be displayed.
+10/29/2025 03:48:16 PM - InsightsPage - INFO: Element not found with locator: //iframe[contains(@src, 'https://embedded.powerbi.com/ReportEmbed?uid=')] locatorType: xpath
+10/29/2025 03:48:16 PM - InsightsPage - INFO: Switched to iframe with src containing 'https://embedded.powerbi.com/ReportEmbed?uid='
+10/29/2025 03:48:16 PM - InsightsPage - INFO: Waiting for element to be visible: XPath='//div[@data-testid='display-area']', Timeout=10 seconds
+10/29/2025 03:48:26 PM - InsightsPage - ERROR: Element not visible or not found: XPath='//div[@data-testid='display-area']' | Error: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0xbafe43+66515]
+	GetHandleVerifier [0x0xbafe84+66580]
+	(No symbol) [0x0x99dc48]
+	(No symbol) [0x0x9e8704]
+	(No symbol) [0x0x9e8aab]
+	(No symbol) [0x0xa2f482]
+	(No symbol) [0x0xa0b214]
+	(No symbol) [0x0xa2cba7]
+	(No symbol) [0x0xa0afc6]
+	(No symbol) [0x0x9dc2ca]
+	(No symbol) [0x0x9dd154]
+	GetHandleVerifier [0x0xe07353+2521315]
+	GetHandleVerifier [0x0xe022d3+2500707]
+	GetHandleVerifier [0x0xbd7c94+229924]
+	GetHandleVerifier [0x0xbc81f8+165768]
+	GetHandleVerifier [0x0xbcecad+193085]
+	GetHandleVerifier [0x0xbb8158+100072]
+	GetHandleVerifier [0x0xbb82f0+100480]
+	GetHandleVerifier [0x0xba25aa+11066]
+	BaseThreadInitThunk [0x0x76695d49+25]
+	RtlInitializeExceptionChain [0x0x775fd6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x775fd661+561]
+
+10/29/2025 03:48:26 PM - InsightsPage - WARNING: Insights for 'What are the sales record for past year' not displayed.
+10/29/2025 03:48:26 PM - InsightsPage - INFO: Clicking to delete the prompt search
+10/29/2025 03:48:26 PM - InsightsPage - INFO: Waiting for element to be clickable: XPath='//button[@mattooltip='Delete']', Timeout=15 seconds
+10/29/2025 03:48:26 PM - InsightsPage - INFO: Element is clickable: XPath='//button[@mattooltip='Delete']'
+10/29/2025 03:48:26 PM - InsightsPage - DEBUG: Scrolling element into view
+10/29/2025 03:48:27 PM - InsightsPage - INFO: Attempting to click element using standard click
+10/29/2025 03:48:27 PM - InsightsPage - INFO: Element clicked successfully using standard click
+10/29/2025 03:48:30 PM - InsightsPage - INFO: Element not found with locator: //button[@mattooltip='Delete'] locatorType: xpath
+10/29/2025 03:48:30 PM - InsightsPage - INFO: Cannot click on the element with locator: //button[@mattooltip='Delete'], locatorType: XPATH. Error: 'NoneType' object has no attribute 'click'
+10/29/2025 03:48:30 PM - InsightsPage - INFO: Prompt search deleted successfully
+10/29/2025 03:48:30 PM - InsightsPage - INFO: Starting prompt verification for test case: test_verifyInsurancePrompt2
+10/29/2025 03:48:30 PM - InsightsPage - INFO: Expected connection name: demo_retail
+10/29/2025 03:48:30 PM - InsightsPage - INFO: Static wait for 5 seconds
+10/29/2025 03:48:35 PM - InsightsPage - INFO: Clicking on prompt label: XPath='//span[text()='Prompt']'
+10/29/2025 03:48:35 PM - InsightsPage - INFO: Waiting for dropdown arrow to become visible: XPath='//div[@class='mat-mdc-select-arrow']'
+10/29/2025 03:48:35 PM - InsightsPage - INFO: Clicking on dropdown arrow
+10/29/2025 03:48:35 PM - InsightsPage - INFO: Fetching dropdown options
+10/29/2025 03:48:35 PM - InsightsPage - INFO: Static wait for 3 seconds
+10/29/2025 03:48:38 PM - InsightsPage - DEBUG: Found option: 'cementdemo'
+10/29/2025 03:48:38 PM - InsightsPage - DEBUG: Found option: 'cementdemo'
+10/29/2025 03:48:38 PM - InsightsPage - DEBUG: Found option: 'demo_retail'
+10/29/2025 03:48:38 PM - InsightsPage - INFO: Selecting matching option: 'demo_retail'
+10/29/2025 03:48:38 PM - InsightsPage - INFO: Entering prompt input for test case: test_verifyInsurancePrompt2
+10/29/2025 03:48:38 PM - InsightsPage - INFO: Entered prompt input: Show me the Total Net Sales by Month with units sold and Year.
+10/29/2025 03:48:38 PM - InsightsPage - INFO: Clicking to submit the prompt
+10/29/2025 03:48:38 PM - InsightsPage - INFO: Waiting for element to be clickable: XPath='//button[@mattooltip='Submit Prompt']', Timeout=15 seconds
+10/29/2025 03:48:38 PM - InsightsPage - INFO: Element is clickable: XPath='//button[@mattooltip='Submit Prompt']'
+10/29/2025 03:48:38 PM - InsightsPage - DEBUG: Scrolling element into view
+10/29/2025 03:48:39 PM - InsightsPage - INFO: Attempting to click element using standard click
+10/29/2025 03:48:39 PM - InsightsPage - INFO: Element clicked successfully using standard click
+10/29/2025 03:48:40 PM - InsightsPage - INFO: Cannot click on the element with locator: //button[@mattooltip='Submit Prompt'], locatorType: XPATH. Error: Message: element click intercepted: Element <button _ngcontent-ng-c1308102967="" mat-icon-button="" color="primary" mattooltip="Submit Prompt" class="mdc-icon-button mat-mdc-icon-button mat-mdc-button-base mat-mdc-tooltip-trigger mat-primary mat-mdc-button-disabled" mat-ripple-loader-class-name="mat-mdc-button-ripple" mat-ripple-loader-centered="" aria-describedby="cdk-describedby-message-ng-1-52" cdk-describedby-host="ng-1" disabled="true">...</button> is not clickable at point (1480, 721). Other element would receive the click: <div _ngcontent-ng-c1308102967="" class="submit-prompt">...</div>
+  (Session info: chrome=141.0.7390.123)
+Stacktrace:
+	GetHandleVerifier [0x0xbafe43+66515]
+	GetHandleVerifier [0x0xbafe84+66580]
+	(No symbol) [0x0x99dc48]
+	(No symbol) [0x0x9eec10]
+	(No symbol) [0x0x9ecf73]
+	(No symbol) [0x0x9eaa17]
+	(No symbol) [0x0x9e9c8d]
+	(No symbol) [0x0x9de115]
+	(No symbol) [0x0xa0b1cc]
+	(No symbol) [0x0x9ddb74]
+	(No symbol) [0x0xa0b384]
+	(No symbol) [0x0xa2cba7]
+	(No symbol) [0x0xa0afc6]
+	(No symbol) [0x0x9dc2ca]
+	(No symbol) [0x0x9dd154]
+	GetHandleVerifier [0x0xe07353+2521315]
+	GetHandleVerifier [0x0xe022d3+2500707]
+	GetHandleVerifier [0x0xbd7c94+229924]
+	GetHandleVerifier [0x0xbc81f8+165768]
+	GetHandleVerifier [0x0xbcecad+193085]
+	GetHandleVerifier [0x0xbb8158+100072]
+	GetHandleVerifier [0x0xbb82f0+100480]
+	GetHandleVerifier [0x0xba25aa+11066]
+	BaseThreadInitThunk [0x0x76695d49+25]
+	RtlInitializeExceptionChain [0x0x775fd6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x775fd661+561]
+
+10/29/2025 03:48:40 PM - InsightsPage - INFO: Prompt submitted successfully
+10/29/2025 03:48:40 PM - InsightsPage - INFO: Static wait for 20 seconds: Awaiting insights to be displayed.
+10/29/2025 03:49:00 PM - InsightsPage - INFO: Switched to iframe with src containing 'https://embedded.powerbi.com/ReportEmbed?uid='
+10/29/2025 03:49:00 PM - InsightsPage - INFO: Waiting for element to be visible: XPath='//div[@data-testid='display-area']', Timeout=10 seconds
+10/29/2025 03:49:00 PM - InsightsPage - INFO: Element became visible: XPath='//div[@data-testid='display-area']'
+10/29/2025 03:49:00 PM - InsightsPage - DEBUG: Scrolling element into view: XPath='//div[@data-testid='display-area']'
+10/29/2025 03:49:00 PM - InsightsPage - DEBUG: Pausing briefly to allow animations or overlays to settle
+10/29/2025 03:49:01 PM - InsightsPage - INFO: Clicking to delete the prompt search
+10/29/2025 03:49:01 PM - InsightsPage - INFO: Waiting for element to be clickable: XPath='//button[@mattooltip='Delete']', Timeout=15 seconds
+10/29/2025 03:49:01 PM - InsightsPage - INFO: Element is clickable: XPath='//button[@mattooltip='Delete']'
+10/29/2025 03:49:01 PM - InsightsPage - DEBUG: Scrolling element into view
+10/29/2025 03:49:01 PM - InsightsPage - INFO: Attempting to click element using standard click
+10/29/2025 03:49:01 PM - InsightsPage - INFO: Element clicked successfully using standard click
+10/29/2025 03:49:04 PM - InsightsPage - INFO: Element not found with locator: //button[@mattooltip='Delete'] locatorType: xpath
+10/29/2025 03:49:04 PM - InsightsPage - INFO: Cannot click on the element with locator: //button[@mattooltip='Delete'], locatorType: XPATH. Error: 'NoneType' object has no attribute 'click'
+10/29/2025 03:49:04 PM - InsightsPage - INFO: Prompt search deleted successfully
+10/29/2025 03:49:04 PM - InsightsPage - INFO: Starting prompt verification for test case: test_verifyInsurancePrompt3
+10/29/2025 03:49:04 PM - InsightsPage - INFO: Expected connection name: demo_retail
+10/29/2025 03:49:04 PM - InsightsPage - INFO: Static wait for 5 seconds
+10/29/2025 03:49:09 PM - InsightsPage - INFO: Clicking on prompt label: XPath='//span[text()='Prompt']'
+10/29/2025 03:49:09 PM - InsightsPage - INFO: Waiting for dropdown arrow to become visible: XPath='//div[@class='mat-mdc-select-arrow']'
+10/29/2025 03:49:09 PM - InsightsPage - INFO: Clicking on dropdown arrow
+10/29/2025 03:49:09 PM - InsightsPage - INFO: Fetching dropdown options
+10/29/2025 03:49:09 PM - InsightsPage - INFO: Static wait for 3 seconds
+10/29/2025 03:49:12 PM - InsightsPage - DEBUG: Found option: 'cementdemo'
+10/29/2025 03:49:12 PM - InsightsPage - DEBUG: Found option: 'cementdemo'
+10/29/2025 03:49:12 PM - InsightsPage - DEBUG: Found option: 'demo_retail'
+10/29/2025 03:49:12 PM - InsightsPage - INFO: Selecting matching option: 'demo_retail'
+10/29/2025 03:49:12 PM - InsightsPage - INFO: Entering prompt input for test case: test_verifyInsurancePrompt3
+10/29/2025 03:49:12 PM - InsightsPage - INFO: Entered prompt input: Show me Net Sales and Units Sold by Category and subcategory.
+10/29/2025 03:49:12 PM - InsightsPage - INFO: Clicking to submit the prompt
+10/29/2025 03:49:12 PM - InsightsPage - INFO: Waiting for element to be clickable: XPath='//button[@mattooltip='Submit Prompt']', Timeout=15 seconds
+10/29/2025 03:49:12 PM - InsightsPage - INFO: Element is clickable: XPath='//button[@mattooltip='Submit Prompt']'
+10/29/2025 03:49:12 PM - InsightsPage - DEBUG: Scrolling element into view
+10/29/2025 03:49:13 PM - InsightsPage - INFO: Attempting to click element using standard click
+10/29/2025 03:49:13 PM - InsightsPage - INFO: Element clicked successfully using standard click
+10/29/2025 03:49:14 PM - InsightsPage - INFO: Cannot click on the element with locator: //button[@mattooltip='Submit Prompt'], locatorType: XPATH. Error: Message: element click intercepted: Element <button _ngcontent-ng-c1308102967="" mat-icon-button="" color="primary" mattooltip="Submit Prompt" class="mdc-icon-button mat-mdc-icon-button mat-mdc-button-base mat-mdc-tooltip-trigger mat-primary mat-mdc-button-disabled" mat-ripple-loader-class-name="mat-mdc-button-ripple" mat-ripple-loader-centered="" aria-describedby="cdk-describedby-message-ng-1-52" cdk-describedby-host="ng-1" disabled="true">...</button> is not clickable at point (1480, 721). Other element would receive the click: <div _ngcontent-ng-c1308102967="" class="submit-prompt">...</div>
+  (Session info: chrome=141.0.7390.123)
+Stacktrace:
+	GetHandleVerifier [0x0xbafe43+66515]
+	GetHandleVerifier [0x0xbafe84+66580]
+	(No symbol) [0x0x99dc48]
+	(No symbol) [0x0x9eec10]
+	(No symbol) [0x0x9ecf73]
+	(No symbol) [0x0x9eaa17]
+	(No symbol) [0x0x9e9c8d]
+	(No symbol) [0x0x9de115]
+	(No symbol) [0x0xa0b1cc]
+	(No symbol) [0x0x9ddb74]
+	(No symbol) [0x0xa0b384]
+	(No symbol) [0x0xa2cba7]
+	(No symbol) [0x0xa0afc6]
+	(No symbol) [0x0x9dc2ca]
+	(No symbol) [0x0x9dd154]
+	GetHandleVerifier [0x0xe07353+2521315]
+	GetHandleVerifier [0x0xe022d3+2500707]
+	GetHandleVerifier [0x0xbd7c94+229924]
+	GetHandleVerifier [0x0xbc81f8+165768]
+	GetHandleVerifier [0x0xbcecad+193085]
+	GetHandleVerifier [0x0xbb8158+100072]
+	GetHandleVerifier [0x0xbb82f0+100480]
+	GetHandleVerifier [0x0xba25aa+11066]
+	BaseThreadInitThunk [0x0x76695d49+25]
+	RtlInitializeExceptionChain [0x0x775fd6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x775fd661+561]
+
+10/29/2025 03:49:14 PM - InsightsPage - INFO: Prompt submitted successfully
+10/29/2025 03:49:14 PM - InsightsPage - INFO: Static wait for 20 seconds: Awaiting insights to be displayed.
+10/29/2025 03:49:34 PM - InsightsPage - INFO: Switched to iframe with src containing 'https://embedded.powerbi.com/ReportEmbed?uid='
+10/29/2025 03:49:34 PM - InsightsPage - INFO: Waiting for element to be visible: XPath='//div[@data-testid='display-area']', Timeout=10 seconds
+10/29/2025 03:49:34 PM - InsightsPage - INFO: Element became visible: XPath='//div[@data-testid='display-area']'
+10/29/2025 03:49:34 PM - InsightsPage - DEBUG: Scrolling element into view: XPath='//div[@data-testid='display-area']'
+10/29/2025 03:49:34 PM - InsightsPage - DEBUG: Pausing briefly to allow animations or overlays to settle
+10/29/2025 03:49:35 PM - InsightsPage - INFO: Clicking to delete the prompt search
+10/29/2025 03:49:35 PM - InsightsPage - INFO: Waiting for element to be clickable: XPath='//button[@mattooltip='Delete']', Timeout=15 seconds
+10/29/2025 03:49:35 PM - InsightsPage - INFO: Element is clickable: XPath='//button[@mattooltip='Delete']'
+10/29/2025 03:49:35 PM - InsightsPage - DEBUG: Scrolling element into view
+10/29/2025 03:49:35 PM - InsightsPage - INFO: Attempting to click element using standard click
+10/29/2025 03:49:35 PM - InsightsPage - INFO: Element clicked successfully using standard click
+10/29/2025 03:49:38 PM - InsightsPage - INFO: Element not found with locator: //button[@mattooltip='Delete'] locatorType: xpath
+10/29/2025 03:49:38 PM - InsightsPage - INFO: Cannot click on the element with locator: //button[@mattooltip='Delete'], locatorType: XPATH. Error: 'NoneType' object has no attribute 'click'
+10/29/2025 03:49:38 PM - InsightsPage - INFO: Prompt search deleted successfully
+10/29/2025 03:49:39 PM - InsightsPage - INFO: Starting semantic verification for test case: test_verifyInsuranceSemantic1
+10/29/2025 03:49:39 PM - InsightsPage - INFO: Expected connection name: demo_retail
+10/29/2025 03:49:39 PM - InsightsPage - INFO: Static wait for 5 seconds
+10/29/2025 03:49:44 PM - InsightsPage - INFO: Clicking on prompt label: XPath='//span[text()='Semantic Views']'
+10/29/2025 03:49:44 PM - InsightsPage - INFO: Waiting for dropdown arrow to become visible: XPath='//div[@class='mat-mdc-select-arrow']'
+10/29/2025 03:49:44 PM - InsightsPage - INFO: Clicking on dropdown arrow
+10/29/2025 03:49:44 PM - InsightsPage - ERROR: Failed to click dropdown arrow. Error: Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=141.0.7390.123); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+	GetHandleVerifier [0x0xbafe43+66515]
+	GetHandleVerifier [0x0xbafe84+66580]
+	(No symbol) [0x0x99dc48]
+	(No symbol) [0x0x9a4617]
+	(No symbol) [0x0x9a69d4]
+	(No symbol) [0x0x9a6a68]
+	(No symbol) [0x0x9eeb42]
+	(No symbol) [0x0x9ecf73]
+	(No symbol) [0x0x9eaa17]
+	(No symbol) [0x0x9e9c8d]
+	(No symbol) [0x0x9de115]
+	(No symbol) [0x0xa0b1cc]
+	(No symbol) [0x0x9ddb74]
+	(No symbol) [0x0xa0b384]
+	(No symbol) [0x0xa2cba7]
+	(No symbol) [0x0xa0afc6]
+	(No symbol) [0x0x9dc2ca]
+	(No symbol) [0x0x9dd154]
+	GetHandleVerifier [0x0xe07353+2521315]
+	GetHandleVerifier [0x0xe022d3+2500707]
+	GetHandleVerifier [0x0xbd7c94+229924]
+	GetHandleVerifier [0x0xbc81f8+165768]
+	GetHandleVerifier [0x0xbcecad+193085]
+	GetHandleVerifier [0x0xbb8158+100072]
+	GetHandleVerifier [0x0xbb82f0+100480]
+	GetHandleVerifier [0x0xba25aa+11066]
+	BaseThreadInitThunk [0x0x76695d49+25]
+	RtlInitializeExceptionChain [0x0x775fd6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x775fd661+561]
+
+10/29/2025 03:49:44 PM - InsightsPage - INFO: Clicking to submit the prompt
+10/29/2025 03:49:44 PM - InsightsPage - INFO: Waiting for element to be clickable: XPath='//button[@mattooltip='Submit Prompt']', Timeout=15 seconds
+10/29/2025 03:50:02 PM - InsightsPage - ERROR: Element not clickable or not found: XPath='//button[@mattooltip='Submit Prompt']' | Error: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0xbafe43+66515]
+	GetHandleVerifier [0x0xbafe84+66580]
+	(No symbol) [0x0x99dc48]
+	(No symbol) [0x0x9e8704]
+	(No symbol) [0x0x9e8aab]
+	(No symbol) [0x0xa2f482]
+	(No symbol) [0x0xa0b214]
+	(No symbol) [0x0xa2cba7]
+	(No symbol) [0x0xa0afc6]
+	(No symbol) [0x0x9dc2ca]
+	(No symbol) [0x0x9dd154]
+	GetHandleVerifier [0x0xe07353+2521315]
+	GetHandleVerifier [0x0xe022d3+2500707]
+	GetHandleVerifier [0x0xbd7c94+229924]
+	GetHandleVerifier [0x0xbc81f8+165768]
+	GetHandleVerifier [0x0xbcecad+193085]
+	GetHandleVerifier [0x0xbb8158+100072]
+	GetHandleVerifier [0x0xbb82f0+100480]
+	GetHandleVerifier [0x0xba25aa+11066]
+	BaseThreadInitThunk [0x0x76695d49+25]
+	RtlInitializeExceptionChain [0x0x775fd6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x775fd661+561]
+
+10/29/2025 03:50:05 PM - InsightsPage - INFO: Element not found with locator: //button[@mattooltip='Submit Prompt'] locatorType: xpath
+10/29/2025 03:50:05 PM - InsightsPage - INFO: Cannot click on the element with locator: //button[@mattooltip='Submit Prompt'], locatorType: XPATH. Error: 'NoneType' object has no attribute 'click'
+10/29/2025 03:50:05 PM - InsightsPage - INFO: Prompt submitted successfully
+10/29/2025 03:50:05 PM - InsightsPage - INFO: Starting semantic verification for test case: test_verifyInsuranceSemantic2
+10/29/2025 03:50:05 PM - InsightsPage - INFO: Expected connection name: demo_retail
+10/29/2025 03:50:05 PM - InsightsPage - INFO: Static wait for 5 seconds
+10/29/2025 03:50:10 PM - InsightsPage - INFO: Clicking on prompt label: XPath='//span[text()='Semantic Views']'
+10/29/2025 03:50:10 PM - InsightsPage - INFO: Waiting for dropdown arrow to become visible: XPath='//div[@class='mat-mdc-select-arrow']'
+10/29/2025 03:50:10 PM - InsightsPage - INFO: Clicking on dropdown arrow
+10/29/2025 03:50:10 PM - InsightsPage - INFO: Fetching dropdown options
+10/29/2025 03:50:10 PM - InsightsPage - INFO: Static wait for 3 seconds
+10/29/2025 03:50:13 PM - InsightsPage - DEBUG: Found option: 'cementdemo'
+10/29/2025 03:50:13 PM - InsightsPage - DEBUG: Found option: 'cementdemo'
+10/29/2025 03:50:13 PM - InsightsPage - DEBUG: Found option: 'demo_retail'
+10/29/2025 03:50:13 PM - InsightsPage - INFO: Selecting matching option: 'demo_retail'
+10/29/2025 03:50:13 PM - InsightsPage - INFO: Waiting for element to be visible: XPath='//mat-option/span', Timeout=20 seconds
+10/29/2025 03:50:13 PM - InsightsPage - INFO: Element became visible: XPath='//mat-option/span'
+10/29/2025 03:50:13 PM - InsightsPage - DEBUG: Scrolling element into view: XPath='//mat-option/span'
+10/29/2025 03:50:13 PM - InsightsPage - DEBUG: Pausing briefly to allow animations or overlays to settle
+10/29/2025 03:50:13 PM - InsightsPage - INFO: Clicking to submit the prompt
+10/29/2025 03:50:13 PM - InsightsPage - INFO: Waiting for element to be clickable: XPath='//button[@mattooltip='Submit Prompt']', Timeout=15 seconds
+10/29/2025 03:50:30 PM - InsightsPage - ERROR: Element not clickable or not found: XPath='//button[@mattooltip='Submit Prompt']' | Error: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0xbafe43+66515]
+	GetHandleVerifier [0x0xbafe84+66580]
+	(No symbol) [0x0x99dc48]
+	(No symbol) [0x0x9e8704]
+	(No symbol) [0x0x9e8aab]
+	(No symbol) [0x0xa2f482]
+	(No symbol) [0x0xa0b214]
+	(No symbol) [0x0xa2cba7]
+	(No symbol) [0x0xa0afc6]
+	(No symbol) [0x0x9dc2ca]
+	(No symbol) [0x0x9dd154]
+	GetHandleVerifier [0x0xe07353+2521315]
+	GetHandleVerifier [0x0xe022d3+2500707]
+	GetHandleVerifier [0x0xbd7c94+229924]
+	GetHandleVerifier [0x0xbc81f8+165768]
+	GetHandleVerifier [0x0xbcecad+193085]
+	GetHandleVerifier [0x0xbb8158+100072]
+	GetHandleVerifier [0x0xbb82f0+100480]
+	GetHandleVerifier [0x0xba25aa+11066]
+	BaseThreadInitThunk [0x0x76695d49+25]
+	RtlInitializeExceptionChain [0x0x775fd6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x775fd661+561]
+
+10/29/2025 03:50:34 PM - InsightsPage - INFO: Element not found with locator: //button[@mattooltip='Submit Prompt'] locatorType: xpath
+10/29/2025 03:50:34 PM - InsightsPage - INFO: Cannot click on the element with locator: //button[@mattooltip='Submit Prompt'], locatorType: XPATH. Error: 'NoneType' object has no attribute 'click'
+10/29/2025 03:50:34 PM - InsightsPage - INFO: Prompt submitted successfully
+10/29/2025 03:50:34 PM - InsightsPage - INFO: Starting semantic verification for test case: test_verifyInsuranceSemantic3
+10/29/2025 03:50:34 PM - InsightsPage - INFO: Expected connection name: demo_retail
+10/29/2025 03:50:34 PM - InsightsPage - INFO: Static wait for 5 seconds
+10/29/2025 03:50:39 PM - InsightsPage - INFO: Clicking on prompt label: XPath='//span[text()='Semantic Views']'
+10/29/2025 03:50:39 PM - InsightsPage - INFO: Waiting for dropdown arrow to become visible: XPath='//div[@class='mat-mdc-select-arrow']'
+10/29/2025 03:50:39 PM - InsightsPage - INFO: Clicking on dropdown arrow
+10/29/2025 03:50:39 PM - InsightsPage - INFO: Fetching dropdown options
+10/29/2025 03:50:39 PM - InsightsPage - INFO: Static wait for 3 seconds
+10/29/2025 03:50:42 PM - InsightsPage - DEBUG: Found option: 'cementdemo'
+10/29/2025 03:50:42 PM - InsightsPage - DEBUG: Found option: 'cementdemo'
+10/29/2025 03:50:42 PM - InsightsPage - DEBUG: Found option: 'demo_retail'
+10/29/2025 03:50:42 PM - InsightsPage - INFO: Selecting matching option: 'demo_retail'
+10/29/2025 03:50:42 PM - InsightsPage - INFO: Waiting for element to be visible: XPath='//mat-option/span', Timeout=20 seconds
+10/29/2025 03:50:42 PM - InsightsPage - INFO: Element became visible: XPath='//mat-option/span'
+10/29/2025 03:50:42 PM - InsightsPage - DEBUG: Scrolling element into view: XPath='//mat-option/span'
+10/29/2025 03:50:42 PM - InsightsPage - DEBUG: Pausing briefly to allow animations or overlays to settle
+10/29/2025 03:50:42 PM - InsightsPage - INFO: Clicking to submit the prompt
+10/29/2025 03:50:42 PM - InsightsPage - INFO: Waiting for element to be clickable: XPath='//button[@mattooltip='Submit Prompt']', Timeout=15 seconds
+10/29/2025 03:50:59 PM - InsightsPage - ERROR: Element not clickable or not found: XPath='//button[@mattooltip='Submit Prompt']' | Error: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0xbafe43+66515]
+	GetHandleVerifier [0x0xbafe84+66580]
+	(No symbol) [0x0x99dc48]
+	(No symbol) [0x0x9e8704]
+	(No symbol) [0x0x9e8aab]
+	(No symbol) [0x0xa2f482]
+	(No symbol) [0x0xa0b214]
+	(No symbol) [0x0xa2cba7]
+	(No symbol) [0x0xa0afc6]
+	(No symbol) [0x0x9dc2ca]
+	(No symbol) [0x0x9dd154]
+	GetHandleVerifier [0x0xe07353+2521315]
+	GetHandleVerifier [0x0xe022d3+2500707]
+	GetHandleVerifier [0x0xbd7c94+229924]
+	GetHandleVerifier [0x0xbc81f8+165768]
+	GetHandleVerifier [0x0xbcecad+193085]
+	GetHandleVerifier [0x0xbb8158+100072]
+	GetHandleVerifier [0x0xbb82f0+100480]
+	GetHandleVerifier [0x0xba25aa+11066]
+	BaseThreadInitThunk [0x0x76695d49+25]
+	RtlInitializeExceptionChain [0x0x775fd6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x775fd661+561]
+
+10/29/2025 03:51:03 PM - InsightsPage - INFO: Element not found with locator: //button[@mattooltip='Submit Prompt'] locatorType: xpath
+10/29/2025 03:51:03 PM - InsightsPage - INFO: Cannot click on the element with locator: //button[@mattooltip='Submit Prompt'], locatorType: XPATH. Error: 'NoneType' object has no attribute 'click'
+10/29/2025 03:51:03 PM - InsightsPage - INFO: Prompt submitted successfully
+10/29/2025 03:51:03 PM - InsightsPage - INFO: Starting semantic verification for test case: test_verifyInsuranceSemantic4
+10/29/2025 03:51:03 PM - InsightsPage - INFO: Expected connection name: demo_retail
+10/29/2025 03:51:03 PM - InsightsPage - INFO: Static wait for 5 seconds
+10/29/2025 03:51:08 PM - InsightsPage - INFO: Clicking on prompt label: XPath='//span[text()='Semantic Views']'
+10/29/2025 03:51:08 PM - InsightsPage - INFO: Waiting for dropdown arrow to become visible: XPath='//div[@class='mat-mdc-select-arrow']'
+10/29/2025 03:51:08 PM - InsightsPage - INFO: Clicking on dropdown arrow
+10/29/2025 03:51:08 PM - InsightsPage - INFO: Fetching dropdown options
+10/29/2025 03:51:08 PM - InsightsPage - INFO: Static wait for 3 seconds
+10/29/2025 03:51:11 PM - InsightsPage - DEBUG: Found option: 'cementdemo'
+10/29/2025 03:51:11 PM - InsightsPage - DEBUG: Found option: 'cementdemo'
+10/29/2025 03:51:11 PM - InsightsPage - DEBUG: Found option: 'demo_retail'
+10/29/2025 03:51:11 PM - InsightsPage - INFO: Selecting matching option: 'demo_retail'
+10/29/2025 03:51:11 PM - InsightsPage - INFO: Waiting for element to be visible: XPath='//mat-option/span', Timeout=20 seconds
+10/29/2025 03:51:11 PM - InsightsPage - INFO: Element became visible: XPath='//mat-option/span'
+10/29/2025 03:51:11 PM - InsightsPage - DEBUG: Scrolling element into view: XPath='//mat-option/span'
+10/29/2025 03:51:11 PM - InsightsPage - DEBUG: Pausing briefly to allow animations or overlays to settle
+10/29/2025 03:51:11 PM - InsightsPage - INFO: Clicking to submit the prompt
+10/29/2025 03:51:11 PM - InsightsPage - INFO: Waiting for element to be clickable: XPath='//button[@mattooltip='Submit Prompt']', Timeout=15 seconds
+10/29/2025 03:51:28 PM - InsightsPage - ERROR: Element not clickable or not found: XPath='//button[@mattooltip='Submit Prompt']' | Error: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0xbafe43+66515]
+	GetHandleVerifier [0x0xbafe84+66580]
+	(No symbol) [0x0x99dc48]
+	(No symbol) [0x0x9e8704]
+	(No symbol) [0x0x9e8aab]
+	(No symbol) [0x0xa2f482]
+	(No symbol) [0x0xa0b214]
+	(No symbol) [0x0xa2cba7]
+	(No symbol) [0x0xa0afc6]
+	(No symbol) [0x0x9dc2ca]
+	(No symbol) [0x0x9dd154]
+	GetHandleVerifier [0x0xe07353+2521315]
+	GetHandleVerifier [0x0xe022d3+2500707]
+	GetHandleVerifier [0x0xbd7c94+229924]
+	GetHandleVerifier [0x0xbc81f8+165768]
+	GetHandleVerifier [0x0xbcecad+193085]
+	GetHandleVerifier [0x0xbb8158+100072]
+	GetHandleVerifier [0x0xbb82f0+100480]
+	GetHandleVerifier [0x0xba25aa+11066]
+	BaseThreadInitThunk [0x0x76695d49+25]
+	RtlInitializeExceptionChain [0x0x775fd6db+107]
+	RtlGetAppContainerNamedObjectPath [0x0x775fd661+561]
+
+10/29/2025 03:51:31 PM - InsightsPage - INFO: Element not found with locator: //button[@mattooltip='Submit Prompt'] locatorType: xpath
+10/29/2025 03:51:31 PM - InsightsPage - INFO: Cannot click on the element with locator: //button[@mattooltip='Submit Prompt'], locatorType: XPATH. Error: 'NoneType' object has no attribute 'click'
+10/29/2025 03:51:31 PM - InsightsPage - INFO: Prompt submitted successfully
+Driver closed successfully
