@@ -8,10 +8,8 @@ class Util(object):
 
     log = cl.customLogger(logging.INFO)
 
+    # Put the program to wait for the specified amount of time
     def sleep(self, sec, info=""):
-        """
-        Put the program to wait for the specified amount of time
-        """
         if info is not None:
             self.log.info("Wait :: '" + str(sec) + "' seconds for " + info)
         try:
@@ -19,15 +17,8 @@ class Util(object):
         except InterruptedError:
             traceback.print_stack()
 
+    # Get random string of characters
     def getAlphaNumeric(self, length, type='letters'):
-        """
-        Get random string of characters
-
-        Parameters:
-            length: Length of string, number of characters string should have
-            type: Type of characters string should have. Default is letters
-            Provide lower/upper/digits for different types
-        """
         alpha_num = ''
         if type == 'lower':
             case = string.ascii_lowercase
@@ -41,10 +32,8 @@ class Util(object):
             case = string.ascii_letters
         return alpha_num.join(random.choice(case) for i in range(length))
 
+    # get a random unique name
     def getUniqueName(self, charCount=10):
-        """
-        Get a unique name
-        """
         return self.getAlphaNumeric(charCount, 'lower')
 
     def getUniqueNameList(self, listSize=5, itemLength=None):
@@ -53,6 +42,7 @@ class Util(object):
             nameList.append(self.getUniqueName(itemLength[i]))
         return nameList
 
+    #Verify if the actual text contains expected text
     def verifyTextContains(self, actualText, expectedText):
         self.log.info("Actual Text From Application Web UI --> :: " + actualText)
         self.log.info("Expected Text From Application Web UI --> :: " + expectedText)
@@ -63,6 +53,7 @@ class Util(object):
             self.log.info("### VERIFICATION DOES NOT CONTAINS !!!")
             return False
 
+    #Verify if the expected matches with the actual text match
     def verifyTextMatch(self, actualText, expectedText):
         self.log.info("Actual Text From Application Web UI --> :: " + actualText)
         self.log.info("Expected Text From Application Web UI --> :: " + expectedText)
@@ -73,24 +64,12 @@ class Util(object):
             self.log.info("### VERIFICATION DOES NOT MATCHED !!!")
             return False
 
+    #Verify two list matches
     def verifyListMatch(self, expectedList, actualList):
-        """
-        Verify two list matches
-
-        Parameters:
-            expectedList: Expected List
-            actualList: Actual List
-        """
         return set(expectedList) == set(actualList)
 
+    #Verify actual list contains elements of expected list
     def verifyListContains(self, expectedList, actualList):
-        """
-        Verify actual list contains elements of expected list
-
-        Parameters:
-            expectedList: Expected List
-            actualList: Actual List
-        """
         length = len(expectedList)
         for i in range(0, length):
             if expectedList[i] not in actualList:

@@ -1,16 +1,15 @@
-import logging
 import os
 import time
-from traceback import print_stack
-
+from selenium.common.exceptions import TimeoutException
 from selenium.common import NoSuchElementException, ElementNotVisibleException, ElementNotSelectableException
+from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 from datetime import datetime
 import utilities.Customlogger as cL
 import logging
-
+import traceback
 class SeleniumDriver:
 
     log = cL.customLogger(logging.DEBUG)
@@ -52,14 +51,14 @@ class SeleniumDriver:
     # Get Elements Generic method
     # Params: locator and locator type
     def getElements(self, locator, locatorType="id"):
-        element = None
+        elements = None
         try:
             locatorType = locatorType.lower()
             byType = self.getByType(locatorType)
-            element = self.driver.find_elements(byType, locator)
+            elements = self.driver.find_elements(byType, locator)
         except NoSuchElementException:
             self.log.info("Element not found with locator: " + locator + " locatorType: " + locatorType)
-        return element
+        return elements
 
     #Get Elements Count Generic Method
     def getElementsLength(self,locator, locatorType="id"):
@@ -87,8 +86,9 @@ class SeleniumDriver:
             element = self.getElement(locator, locatorType)
             element.click()
         #    self.log.info("Clicked on element with locator: " + locator + " locatorType: " + locatorType)
-        except:
-            self.log.info("Cannot click on the element with locator: " + locator + " locatorType: " + locatorType)
+        except Exception as e:
+            self.log.info(
+                f"Cannot click on the element with locator: {locator}, locatorType: {locatorType}. Error: {e}")
 
     # Check for Presence of an Element
     def elementPresenceCheck(self, locator, locatorType):
@@ -119,9 +119,8 @@ class SeleniumDriver:
                 os.makedirs(destinationDirectory)
             self.driver.save_screenshot(destinationFile)
          #   self.log.info("Screenshot save to directory: " + destinationFile)
-        except:
-            self.log.error("### Exception Occurred when taking screenshot")
-            print_stack()
+        except Exception:
+            self.log.error("Exception occurred when taking screenshot", exc_info=True)
 
     #Wait For Element to be present
     #Params: locator and locator type
@@ -145,7 +144,170 @@ class SeleniumDriver:
         return element
 
     def getTitle(self):
+        self.log.info("Getting page title")
         return self.driver.title
 
     def pageRefresh(self):
+        self.log.info("Refreshing the current web page")
         return self.driver.refresh()
+
+    def waitTillElementClickable(self, xpath, timeout=30):
+        self.log.info(f"Waiting for element to be clickable: XPath='{xpath}', Timeout={timeout} seconds")
+        try:
+            wait = WebDriverWait(self.driver, timeout)
+            element = wait.until(EC.element_to_be_clickable((By.XPATH, xpath)))
+            self.log.info(f"Element is clickable: XPath='{xpath}'")
+
+            self.log.debug("Scrolling element into view")
+            self.driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", element)
+            time.sleep(0.5)  # Let any animations or overlays settle
+
+            try:
+                self.log.info("Attempting to click element using standard click")
+                wait.until(EC.element_to_be_clickable((By.XPATH, xpath)))
+                element.click()
+                self.log.info("Element clicked successfully using standard click")
+            except Exception as e:
+                self.log.warning(f"Standard click failed. Trying JavaScript click. Error: {e}")
+                try:
+                    self.driver.execute_script("arguments[0].click();", element)
+                    self.log.info("Element clicked successfully using JavaScript")
+                except Exception as js_error:
+                    self.log.error(f"JavaScript click also failed for XPath='{xpath}'. Error: {js_error}")
+
+        except Exception as e:
+            self.log.error(f"Element not clickable or not found: XPath='{xpath}' | Error: {e}")
+
+    #Waits for element to be clickable and clicks using ActionChains
+    def waitTillElementClickableActions(self, xpath, timeout=10):
+        self.log.info(f"Waiting for element to be clickable: XPath='{xpath}', Timeout={timeout} seconds")
+        try:
+            wait = WebDriverWait(self.driver, timeout)
+            element = wait.until(EC.presence_of_element_located((By.XPATH, xpath)))
+            self.log.info(f"Element located in DOM: XPath='{xpath}'")
+
+            self.log.debug("Scrolling element into view")
+            self.driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", element)
+            time.sleep(0.5)  # Let animations or overlays settle
+
+            try:
+                self.log.info("Waiting for element to be interactable (clickable)")
+                wait.until(EC.element_to_be_clickable((By.XPATH, xpath)))
+
+                self.log.info("Attempting to click element using ActionChains")
+                actions = ActionChains(self.driver)
+                self.isElementPresent(xpath, "XPATH")  # Optional: log inside this method too
+                actions.move_to_element_with_offset(element, 10, 0).click().perform()
+                self.log.info("Element clicked successfully using ActionChains")
+
+            except Exception as e:
+                self.log.warning(f"ActionChains click failed. Falling back to JavaScript click. Error: {e}")
+                try:
+                    self.driver.execute_script("arguments[0].click();", element)
+                    self.log.info("Element clicked successfully using JavaScript")
+                except Exception as js_error:
+                    self.log.error(f"JavaScript click also failed for XPath='{xpath}'. Error: {js_error}")
+
+        except Exception as e:
+            self.log.error(f"Element not clickable or not found: XPath='{xpath}' | Error: {e}")
+
+
+    #Highlights a Selenium WebDriver element with a border only.
+    def highlightElement(self, xpath, effect_time=2, border="2px solid red"):
+        self.log.info(
+            f"Attempting to highlight element: XPath='{xpath}' with border='{border}' for {effect_time} seconds")
+        try:
+            element = self.getElement(xpath, "XPATH")
+            original_style = element.get_attribute('style')
+            self.log.debug(f"Original style of element: '{original_style}'")
+
+            self.log.info("Applying highlight style to element")
+            self.driver.execute_script(
+                f"arguments[0].setAttribute('style', arguments[0].getAttribute('style') + '; border: {border};')",
+                element
+            )
+
+            self.log.debug("Pausing to keep highlight visible")
+            time.sleep(effect_time)
+
+            self.log.info("Reverting element to original style")
+            self.driver.execute_script(
+                f"arguments[0].setAttribute('style', '{original_style}')",
+                element
+            )
+        except Exception as e:
+            self.log.error(f"Failed to highlight element: XPath='{xpath}' | Error: {e}")
+
+    # waits for element to be visible waits till timeout given. default is 10 seconds
+    def waitForElementVisible(self, xpath, timeout=10):
+        self.log.info(f"Waiting for element to be visible: XPath='{xpath}', Timeout={timeout} seconds")
+        try:
+            wait = WebDriverWait(self.driver, timeout)
+            element = wait.until(EC.visibility_of_element_located((By.XPATH, xpath)))
+            self.log.info(f"Element became visible: XPath='{xpath}'")
+
+            self.log.debug(f"Scrolling element into view: XPath='{xpath}'")
+            self.driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", element)
+
+            self.log.debug("Pausing briefly to allow animations or overlays to settle")
+            time.sleep(0.5)
+
+            return element
+        except Exception as e:
+            self.log.error(f"Element not visible or not found: XPath='{xpath}' | Error: {e}")
+            return None
+
+    # Wait for an element to be visible and interactable. This helps when there we need to wait for element to interact with it
+    def waitForElementToBeInteractable(self, xpath, timeout=30):
+        self.log.info(f"Waiting for element to be interactable: XPath='{xpath}'")
+
+        try:
+            wait = WebDriverWait(self.driver, timeout)
+
+            # Step 1: Wait for visibility and clickability
+            element = wait.until(EC.element_to_be_clickable((By.XPATH, xpath)))
+            self.driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", element)
+            time.sleep(0.5)  # Let overlays/animations settle
+
+            # Step 2: Ensure it's not covered by another element
+            if self.isElementObstructed(element):
+                self.log.warning(f"Element is visible but obstructed: XPath='{xpath}'")
+                return None
+
+            self.log.info(f"Element is interactable: XPath='{xpath}'")
+            return element
+
+        except TimeoutException:
+            self.log.error(f"Timeout: Element not interactable within {timeout} seconds: XPath='{xpath}'")
+            return None
+        except Exception as e:
+            self.log.error(f"Error while waiting for interactable element: XPath='{xpath}' | Error: {e}")
+            return None
+
+    # To check if an element is obstructed by another overlay element preventing it to be clicked
+    def isElementObstructed(self, element):
+        try:
+            # Get element's center point
+            location = element.location_once_scrolled_into_view
+            size = element.size
+            center_x = location['x'] + size['width'] / 2
+            center_y = location['y'] + size['height'] / 2
+
+            # Get topmost element at that point
+            top_element = self.driver.execute_script(
+                "return document.elementFromPoint(arguments[0], arguments[1]);",
+                center_x, center_y
+            )
+
+            return top_element != element
+        except Exception as e:
+            self.log.warning(f"Could not determine if element is obstructed. Error: {e}")
+            return False
+
+    #Static wait for given seconds. Used a Front End object are not loading even after they are interactable.
+    def staticWait(self, seconds, reason=""):
+        if reason:
+            self.log.info(f"Static wait for {seconds} seconds: {reason}")
+        else:
+            self.log.info(f"Static wait for {seconds} seconds")
+        time.sleep(seconds)

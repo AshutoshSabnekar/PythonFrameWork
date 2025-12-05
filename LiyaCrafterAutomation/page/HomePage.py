@@ -1,17 +1,21 @@
 import utilities.Customlogger as cL
 import logging
 from base.basePage import BasePage
+from utilities.RunStatus import RunStatus
 
 class HomePage(BasePage):
     log = cL.customLogger(logging.DEBUG)
 
-    def __init__(self, driver):
+    def __init__(self, driver, test_status=None):
         super().__init__(driver)
         self.driver = driver
+        self.test_status = test_status or RunStatus(self.driver)
+
 
     #Locators
-    _btn_menuBarCollapse = "//mat-drawer[@ng-reflect-ng-class='sidenav-collapsed']"
-    _btn_menuBarExpanded = "//mat-drawer[@ng-reflect-ng-class='sidenav-expanded']"
+    _btn_menuBar = "//mat-drawer"
+    _btn_menuBarCollapse = "//mat-drawer[contains(@class='sidenav-collapsed')]"
+    _btn_menuBarExpanded = "//mat-drawer[contains(@class,'sidenav-expanded')]"
     _lbl_welcomeCard = "//mat-card[@class='mat-mdc-card mdc-card top-div']/div/div"
     _crd_widgetCards = "//div[contains(@class,'nav-cards')]/mat-card"
     _txt_expectedWelcomeCard = "Welcome to LIYA - Insight CrafterYour AI powered Reporting ToolExplore your data, find actionable insights, and report on business outcomes 10x faster than traditional methods."
@@ -20,14 +24,15 @@ class HomePage(BasePage):
     _icon_menuBarCollapsed = "//mat-drawer[@ng-reflect-ng-class='sidenav-collapsed'] //mat-list/mat-list-item"
     _icon_menuBarItemsCollapsed = "//mat-drawer[@ng-reflect-ng-class='sidenav-collapsed']//mat-list/mat-list-item/span/a"
     _icon_menuBarLinksExpanded = "//mat-drawer[@ng-reflect-ng-class='sidenav-expanded']//mat-list/mat-list-item/span/a//span"
-    _icon_MatIcon = "//mat-drawer[@ng-reflect-ng-class='sidenav-collapsed']//mat-icon"
-    _icon_HomeButton = "//mat-icon[text()='home']"
+    _icon_MatIcon = "//mat-icon[text()='menu']"
+    _icon_HomeButton = "//mat-icon[contains(text(),'home')]"
     _icon_ConnectorsIcon = "//a[@href='/connectors']"
     _icon_HomeIcon = "//a[@href='/home']"
     _icon_Insights = "//a[@href='/analyze']"
     _icon_ConsolidatedInsights = "//a[@href='/insight']"
     _icon_Dashboard = "//a[@href='/dashboard']"
     _icon_UserManagement = "//a[@href='/user-management']"
+    
 
     #Verify the Home Page title for LIYA Crafter
     #Params : pageTitle
@@ -38,10 +43,13 @@ class HomePage(BasePage):
 
     ##Verify the menu bar is collapsed by default
     def verifyMenuBarCollapsed(self):
-        if self.getElement(self._btn_menuBarCollapse,"XPATH"):
+        menu = self.getElement(self._btn_menuBar,"XPATH")
+        if "sidenav-collapsed" in menu.get_attribute("class"):
             self.log.info("Verified Menu bar is collapsed by default")
         else:
             self.log.info("Menu bar is not collapsed by default")
+            self.elementClick(self._btn_menuBar)
+
 
     # Verify the Welcome Card Text at Home Page
     def verifyWelcomeCardText(self):
@@ -60,12 +68,24 @@ class HomePage(BasePage):
     #Verify the number of Widget Cards
     #Param: numberOfWidgetCards
     def verifyWidgetCardsCount(self,numberOfWidgetCards):
-        widgetCount = self.getElementsLength(self._crd_widgetCards,"XPATH")
-        if widgetCount == numberOfWidgetCards:
-            self.log.info("The Number of Widget Cards is verified as : "+ str(widgetCount))
-        else:
-            self.log.info("The number of expected cards is "+str(numberOfWidgetCards)+
-                  ", but "+str(widgetCount)+" cards are shown")
+        result_message = f"Verifying widget cards count is {numberOfWidgetCards}."
+        try:
+            widgetCount = self.getElementsLength(self._crd_widgetCards, "XPATH")
+            if widgetCount == numberOfWidgetCards:
+                self.log.info("SUCCESS: " + result_message + f" Found: {widgetCount}")
+                # Use the test_status_obj instance
+                self.test_status.mark(True, result_message)
+            else:
+                error_message = f"FAILURE: {result_message} Expected {numberOfWidgetCards}, but found {widgetCount}."
+                self.log.error(error_message)
+                # Use the test_status_obj instance
+                self.test_status.mark(False, error_message)
+        except Exception as e:
+            error_message = f"EXCEPTION during {result_message}: {str(e)}"
+            self.log.error(error_message)
+            # Use the test_status_obj instance
+            self.test_status.mark(False, error_message)
+
 
     # Verify the menu bar expands on click
     # Param:
@@ -75,11 +95,14 @@ class HomePage(BasePage):
         if self.waitForElement(self._btn_menuBarExpanded,"XPATH"):
             self.log.info("Verified Menu bar is expanded")
             self.screenShot()
-            self.elementClick(self._btn_menuBarExpanded, "XPATH")
-            self.log.info("Verified Menu bar is Collapsed")
+            self.elementClick(self._icon_MatIcon,"XPATH")
+            self.verifyMenuBarCollapsed()
+
+            RunStatus.mark(self.test_status, True, "Verified Menu button expands and collapses on click.")
 
         else:
             self.log.info("Verified Menu bar is not expanded")
+            RunStatus.mark(self.test_status, False, "Verified Menu button does expands and collapses on click.")
 
     # Verify the menu bar items present
     # Param:
@@ -95,16 +118,22 @@ class HomePage(BasePage):
         self.log.info("Page name is : " + pageName.lower())
         if pageName.lower() == "connectors":
             self.elementClick(self._icon_ConnectorsIcon,"XPATH")
+            RunStatus.mark(self.test_status, True, f"Navigated to {pageName} page successfully.")
         elif pageName.lower() == "home":
             self.elementClick(self._icon_HomeIcon, "XPATH")
+            RunStatus.mark(self.test_status, True, f"Navigated to {pageName} page successfully.")
         elif pageName.lower() == "insights":
             self.elementClick(self._icon_Insights, "XPATH")
+            RunStatus.mark(self.test_status, True, f"Navigated to {pageName} page successfully.")
         elif pageName.lower() == "consolidated insights":
             self.elementClick(self._icon_ConsolidatedInsights, "XPATH")
+            RunStatus.mark(self.test_status, True, f"Navigated to {pageName} page successfully.")
         elif pageName.lower() == "dashboard":
             self.elementClick(self._icon_Dashboard, "XPATH")
+            RunStatus.mark(self.test_status, True, f"Navigated to {pageName} page successfully.")
         elif pageName.lower() == "user management":
             self.elementClick(self._icon_Dashboard, "XPATH")
+            RunStatus.mark(self.test_status, True, f"Navigated to {pageName} page successfully.")
         else:
             self.log.info("No Page Exists with Page Name :"+pageName)
             self.screenShot()
@@ -115,3 +144,6 @@ class HomePage(BasePage):
         else:
             self.screenShot()
             return False
+        
+        
+                           

@@ -3,45 +3,46 @@ from page.HomePage import HomePage
 from page.ConnectorsPage import ConnectorsPage
 from page.InsightsPage import InsightsPage
 from utilities.ConfigReader import get_config_value
-from utilities.TestStatus import TestStatus
+from utilities.RunStatus import RunStatus
 import unittest
+from utilities.excelReader import ExcelUtils
 from tests.conftest import *
+from base.basePage import BasePage
+from utilities.DataProvider import DataProvider
+
+data_provider = DataProvider()
+
+# Load data once for pytest parametrize before test class definition
+insurance_prompt_data = data_provider.getTestDataList('insurance_data_file', 'sheet1')
+insurance_semantic_data = data_provider.getTestDataList('insurance_data_file', 'sheet2')
 
 @pytest.mark.usefixtures("oneTimeSetUp")
-class InsightsPageTests(unittest.TestCase):
+class InsightsPageTests(unittest.TestCase, BasePage):
 
     @pytest.fixture(autouse=True)
     def classSetUp(self):
         self.Hp = HomePage(self.driver)
         self.Cp = ConnectorsPage(self.driver)
-        self.Ts = TestStatus(self.driver)
+        self.Ts = RunStatus(self.driver)
         self.Ip = InsightsPage(self.driver)
 
-    # def test_navigateToInsightsPage(self):
-    #       self.Hp.verifyNavigatedToPage("Insights")
+    def test_navigateToInsightsPage(self):
+        self.Hp.verifyNavigatedToPage("Insights")
 
-    def test_verifyInsurancePrompts(self):
-        # Read test data inside the method
-        test_data_list = read_test_data("testdata/InsurancePrompts.xlsx")
-        test_data = test_data_list[0]  # Use first row
+    @pytest.mark.parametrize("test_data", insurance_prompt_data)
+    def test_verifyInsurancePrompts(self, test_data):
+        self.Hp.verifyNavigatedToPage("Home")
+        self.Hp.verifyNavigatedToPage("Insights")
 
-        print("Test Data:", test_data)
-        self.Ip.verifyPrompts(test_data)  # Pass the row to your page method
+        self.Ip.verifyAllInsurancePrompts([test_data] )
 
-    def test_verifyPrompts(self):
-        test_data_list = read_test_data("testdata/InsurancePrompts.xlsx")
-        test_data = test_data_list[1]  # Use second row
-
-        print("Test Data for Prompts:", test_data)
-        self.Ip.verifyPrompts(test_data)
-
-    def test_verifyInsurancePrompts2(self):
-        print("Insurance file path:", get_config_value("Paths", "insurance_data_file"))
-        print("Insurance sheet:", get_config_value("Sheets", "insurance_sheet"))
-        file_path = get_config_value("Paths", "insurance_data_file")
-        sheet_name = get_config_value("Sheets", "insurance_sheet")
-        test_data_list = read_test_data(file_path, sheet_name)
-
-        for idx, test_data in enumerate(test_data_list):
-            with self.subTest(f"InsurancePrompt_Row_{idx + 1}"):
-                self.Ip.verifyPrompts(test_data)
+    # @pytest.mark.parametrize("test_data", [insurance_semantic_data])
+    # def test_verifySemanticViews(self,test_data):
+    #     self.Hp.verifyNavigatedToPage("Home")
+    #     self.Hp.verifyNavigatedToPage("Insights")
+    #
+    #     # Get the data list from the excelsheet
+    #     test_data_list = self.getTestDataList("insurance_data_file", "sheet2")
+    #
+    #     # Get all prompt results
+    #     self.Ip.verifyAllInsuranceSemantics(test_data_list, self)
